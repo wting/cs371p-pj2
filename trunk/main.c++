@@ -62,22 +62,24 @@ bool primality(const int &n, const int* const pr) {
 	}
 
 	/// naive: tests if divisible by primes up to sqrt(n)
-	/*for (int i = 0; i < 3612; ++i)
+	for (int i = 0; i < 3612; ++i)
 		if (n == pr[i])
 			return true;
 		else if (n % pr[i] == 0)
 			return false;
 	return true;
-	*/
 
-	///improved naive: tests 6k+1 up to sqrt(n), fails UVA
-	int k = 1;
+	///improved naive: tests 6k+1 up to sqrt(n), passes UVA but slower (so much for improved)
+	/*int k = 1;
 	while (k < 3612) {
 		if (n%(6*k+1) == 0)
+			return false;
+		else if (n%(6*k-1) == 0)
 			return false;
 		++k;
 	}
 	return true;
+	*/
 }
 
 void find_sum(int n, int* const sum, const int* const pr) {
