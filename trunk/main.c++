@@ -40,11 +40,43 @@ using namespace std;
 #endif
 
 bool primality(const int &n, const int* const pr) {
-	for (int i = 0; i < 3612; ++i)
+	/// hardcoding common edge cases
+	if ((n == 2) || (n == 3))
+		return true;
+	else if ((n%2 == 0) || (n%3 == 0))
+		return false;
+
+	/// primes table lookup for small numbers
+	if (n <= 33739) {
+		int min = 0, mid, max = 3611;
+		while (min < max) {
+			mid = (min + max) / 2;
+			if (n == pr[mid])
+				return true;
+			else if (n > pr[mid])
+				min = mid + 1;
+			else
+				max = mid - 1;
+		}
+		return false;
+	}
+
+	/// naive: tests if divisible by primes up to sqrt(n)
+	/*for (int i = 0; i < 3612; ++i)
 		if (n == pr[i])
 			return true;
 		else if (n % pr[i] == 0)
 			return false;
+	return true;
+	*/
+
+	///improved naive: tests 6k+1 up to sqrt(n), fails UVA
+	int k = 1;
+	while (k < 3612) {
+		if (n%(6*k+1) == 0)
+			return false;
+		++k;
+	}
 	return true;
 }
 
@@ -52,6 +84,10 @@ void find_sum(int n, int* const sum, const int* const pr) {
 	int i = 0,j;
 	while (true) {
 		j = n - pr[i];
+		#ifndef ONLINE_JUDGE
+			printf("comparing %d = %d + %d\n",n,pr[i],j);
+			assert(pr[i] <= j);
+		#endif
 		if (primality(j,pr)) {
 			sum[2] = pr[i];
 			sum[3] = j;
@@ -75,7 +111,7 @@ void eval(int &in, int* const sum, const int* const pr) {
 	else {
 		if (in%2 == 1)
 			sum[0] = 3;
-		find_sum(in-(2+sum[1]),sum,pr);
+		find_sum(in-(2+sum[0]),sum,pr);
 	}
 }
 
