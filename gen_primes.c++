@@ -28,21 +28,22 @@ void print(const bool* const p, const int &n) {
 }
 
 void print_array(const bool* const p, const int &n) {
-	/*int cnt = 0;
-	for (int i = 2; i < n; ++i)
-		if (p[i] == 0)
-			++cnt;
-
-	printf("int primes[%d] = {",cnt);
-	for (int i = 2; i < n; ++i)
-		if (i == 2)
+	printf("int primes[%d] = {",3612);
+	int i = 0, cnt = 0;
+	while (cnt < 3612) {
+		if (i == 2) {
 			printf("%d",i);
-		else if (p[i] == 0)
+			++cnt;
+		}
+		else if (p[i] == 0) {
 			printf(",%d",i);
+			++cnt;
+		}
+		++i;
+	}
 	printf("};\n");
-	*/
 
-	printf("bool primes[%d] = {",n);
+	/*printf("bool primes[%d] = {",n);
 	for (int i = 0; i < n; ++i)
 		if (i == 0)
 			printf("0");
@@ -51,11 +52,12 @@ void print_array(const bool* const p, const int &n) {
 		else
 			printf(",0");
 	printf("};\n");
+	*/
 }
 
 int main() {
-	int size = 10000000;
-	bool primes[10000000] = {0}; ///size chosen as sqrt(10000000) for upper bounds of search
+	int size = 1000000;
+	bool primes[1000000] = {0}; ///size chosen as sqrt(10000000) for upper bounds of search
 	generate_primes(primes,size);
 	//print(primes,size);
 	print_array(primes,size);
