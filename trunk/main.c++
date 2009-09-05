@@ -74,7 +74,7 @@ void eval(int &in, int* const sum, const int* const pr) {
 		in = -1;
 	else {
 		if (in%2 == 1)
-			sum[1] = 3;
+			sum[0] = 3;
 		find_sum(in-(2+sum[1]),sum,pr);
 	}
 }
