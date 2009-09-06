@@ -56,10 +56,10 @@ void print_array(const bool* const p, const int &n) {
 }
 
 int main() {
-	int size = 1000000;
-	bool primes[1000000] = {0}; ///size chosen as sqrt(10000000) for upper bounds of search
-	generate_primes(primes,size);
+	//int size = 1000000;
+	//bool primes[1000000] = {0}; ///size chosen as sqrt(10000000) for upper bounds of search
+	//generate_primes(primes,size);
 	//print(primes,size);
-	print_array(primes,size);
+	//print_array(primes,size);
 	return 0;
 }
