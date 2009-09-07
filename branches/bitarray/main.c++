@@ -39,7 +39,7 @@ using namespace std;
     #define NDEBUG
 #endif
 
-bool primality(const int &n, const int* const pr) {
+bool isprime(const int &n, const int* const pr) {
 	/// hardcoding common edge cases
 	if ((n == 2) || (n == 3))
 		return true;
@@ -90,7 +90,7 @@ void find_sum(int n, int* const sum, const int* const pr) {
 			printf("comparing %d = %d + %d\n",n,pr[i],j);
 			assert(pr[i] <= j);
 		#endif
-		if (primality(j,pr)) {
+		if (isprime(j,pr)) {
 			sum[2] = pr[i];
 			sum[3] = j;
 			return;
