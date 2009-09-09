@@ -10,8 +10,8 @@
 #include <string>
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DEFINES
-#define TOP 3163         ///< Sets upper bound for checking if i \in [0, TOP) is prime.
-#define VALUESPERLINE 39 ///< Sets how many values per line to output for array.
+#define TOP 3000         ///< Sets how many primes to process.
+#define VALUESPERLINE 10 ///< Sets how many values per line to output for array.
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% main()
 /**
@@ -26,7 +26,7 @@ int main() {
                                       // Doesn't really matter, but be consistent with other
                                       // projects.
     ifstream infile;
-    string filename = "primeslt3162.txt";
+    string filename = "primes.txt";
 
     infile.open(filename.c_str());
 
@@ -38,41 +38,22 @@ int main() {
     }
 
     // Go through the list of primes, output array of true/false for prime/not.
+	int count = 1;
     int n;
     int top = TOP;
 
-    printf("bool p[%d] = \n{0,", top);
+    printf("int plist[%d] =\n{", top);
     
-    if(infile >> n) { // Get first number.
+    while(infile >> n) {
 
-        for(int i = 1; i < top; i++) {
+		printf("%d,", n);
 
-            // If i is the next prime, n:
-            if(i == n) {
-
-                printf("1");
-
-                // Read in the next prime.
-                if(!(infile >> n)) {
-                    break;
-                }
-
-            // If i is not a prime:
-            } else {
-
-                printf("0");
-            }
-
-            // Don't comma the last number.
-            if(i != top - 1) {
-                printf(",");
-            }
-
-            // For every VALUESPERLINE values, print a newline.
-            if(i % VALUESPERLINE == 0) {
-                printf("\n");
-            }
+        // For every VALUESPERLINE values, print a newline.
+        if(count % VALUESPERLINE == 0) {
+            printf("\n");
         }
+
+		count++;
     }
 
     printf("};\n");
