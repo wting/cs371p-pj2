@@ -16,7 +16,7 @@
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% main()
 /**
  * Outputs an array of 'true's and 'false's,
- * p[i] = 'true',  if i \in [0, TOP) is prime,
+ * p[i] = 'true',  if i in [0, TOP) is prime,
  *        'false', otherwise.
  */
 int main() {

@@ -1,4 +1,4 @@
-// -----------------------------
+/-----------------------------
 // projects/primes/main.c++
 // Copyright (C) 2009
 // Glenn P. Downing
@@ -228,7 +228,7 @@ int main () {
     // RUN MAIN PROGRAM.
     #else
 
-		// Array of primality of n \in [0, ROOTTOP).
+		// Array of primality of n in [0, ROOTTOP).
 	    bool p[ROOTTOP] =
 			{0,0,1,1,0,1,0,1,0,0,0,1,0,1,0,0,0,1,0,1,0,0,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,
 			0,1,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,

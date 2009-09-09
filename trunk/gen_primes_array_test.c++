@@ -9,7 +9,7 @@
 #include <iostream>
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DEFINES
-#define TOP 3163 ///< Sets upper bound for checking if i \in [0, TOP) is prime.
+#define TOP 3163 ///< Sets upper bound for checking if i in [0, TOP) is prime.
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% isPrime()
 /**

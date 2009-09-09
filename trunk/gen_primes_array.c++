@@ -10,13 +10,13 @@
 #include <string>
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DEFINES
-#define TOP 3163         ///< Sets upper bound for checking if i \in [0, TOP) is prime.
+#define TOP 3163         ///< Sets upper bound for checking if i in [0, TOP) is prime.
 #define VALUESPERLINE 39 ///< Sets how many values per line to output for array.
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% main()
 /**
  * Outputs an array of 'true's and 'false's,
- * p[i] = 'true',  if i \in [0, TOP) is prime,
+ * p[i] = 'true',  if i in [0, TOP) is prime,
  *        'false', otherwise.
  */
 int main() {
