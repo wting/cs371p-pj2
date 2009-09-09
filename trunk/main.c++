@@ -1,4 +1,4 @@
-/-----------------------------
+//-----------------------------
 // projects/primes/main.c++
 // Copyright (C) 2009
 // Glenn P. Downing
