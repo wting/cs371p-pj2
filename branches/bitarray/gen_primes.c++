@@ -5,7 +5,8 @@
 
 using namespace std;
 
-#define PR_SIZE 312500
+//#define PR_SIZE 312500
+#define PR_SIZE 4000
 #define HEX false
 
 //10M/32 = 312500
@@ -47,7 +48,7 @@ bool isprime_naive(const int &n) {
 }
 
 bool isprime(const int &n) {
-	if (n < 10000000)
+	if (n < (PR_SIZE * 32))
 		return pr[n >> 5] & (1 << (n & 0x1F));
 	//else
 		//return isprime_naive(n);
@@ -81,7 +82,7 @@ void gen_primes(int size) {
 }
 
 void print_array() {
-	printf("unsigned int primes_bit[%d] = {",PR_SIZE);
+	printf("unsigned int primes_bit[PR_SIZE] = {");
 	for (int i = 0; i < PR_SIZE; ++i)
 		printf("0x%X,",pr[i]);
 	printf("};\n");
