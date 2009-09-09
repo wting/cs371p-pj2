@@ -80,13 +80,25 @@ void gen_primes(int size) {
 		pr[i] = create_int(32*i,32*(i+1));
 }
 
+void print_array() {
+	printf("unsigned int primes_bit[%d] = {",PR_SIZE);
+	for (int i = 0; i < PR_SIZE; ++i)
+		printf("0x%X,",pr[i]);
+	printf("};\n");
+}
+
 int main() {
 	gen_primes(PR_SIZE);
-	for (int i = 0; i < 10000000; ++i)
+
+	/*for (int i = 0; i < 10000000; ++i)
 		if (isprime(i)) {
 			assert(isprime_naive(i));
 			printf("%d\n",i);
 		}
+	*/
+
+	print_array();
+
 	/*gen_primes(4);
 	for (int i = 0; i < 32; ++i)
 		printf("%d primality = %d\n",i,isprime(i));
