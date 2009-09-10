@@ -57,7 +57,7 @@ bool isprime_naive(const int &n) {
 /// tests primality
 bool isprime(const int &n) {
 	#ifndef ONLINE_JUDGE
-		assert primes[0] = 2;
+		assert(primes[0] = 2);
 	#endif
 	#ifdef PROFILE
 		if (n < (PB_LIMIT))
@@ -89,12 +89,12 @@ bool isprime(const int &n) {
 ///find two primes that add up to n
 void find_sum(const int &n) {
 	#ifndef ONLINE_JUDGE
-		assume((n%2) == 1);
+		assert((n%2) == 0);
 	#endif
 	int i = 0,j;
 	while (true) {
 		j = n - primes[i];
-		#ifndef ONLINE_JUDGE
+		#ifdef DEBUG
 			printf("comparing %d = %d + %d\n",n,primes[i],j);
 		#endif
 		if (isprime(j)) {
