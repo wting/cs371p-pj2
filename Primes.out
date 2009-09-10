@@ -1,0 +1,126 @@
+==1142== Memcheck, a memory error detector.
+==1142== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
+==1142== Using LibVEX rev 1884, a library for dynamic binary translation.
+==1142== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
+==1142== Using valgrind-3.4.1-Debian, a dynamic binary instrumentation framework.
+==1142== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
+==1142== For more details, rerun with: -v
+==1142== 
+1730433
+3 2 71 1730357
+7831732
+2 2 11 7831717
+6790461
+3 2 47 6790409
+7672743
+3 2 41 7672697
+7731276
+2 2 13 7731259
+5428240
+2 2 5 5428231
+3800599
+3 2 3 3800591
+519133
+3 2 7 519121
+8924883
+3 2 59 8924819
+3135657
+3 2 11 3135641
+9693862
+2 2 7 9693851
+6098754
+2 2 19 6098731
+4537274
+2 2 11 4537259
+9355830
+2 2 157 9355669
+732614
+2 2 89 732521
+9506633
+3 2 29 9506599
+234594
+2 2 3 234587
+2418647
+3 2 29 2418613
+1425885
+3 2 3 1425877
+7615950
+2 2 67 7615879
+6268075
+3 2 7 6268063
+3291596
+2 2 11 3291581
+2679587
+3 2 23 2679559
+4495937
+3 2 11 4495921
+9938110
+2 2 37 9938069
+1376806
+2 2 13 1376789
+337814
+2 2 17 337793
+1368784
+2 2 19 1368761
+2712928
+2 2 31 2712893
+4908860
+2 2 53 4908803
+3685901
+3 2 13 3685883
+6570234
+2 2 3 6570227
+7146139
+3 2 43 7146091
+9584345
+3 2 13 9584327
+1614598
+2 2 5 1614589
+3616867
+3 2 19 3616843
+9317273
+3 2 5 9317263
+3994186
+2 2 11 3994171
+7800746
+2 2 113 7800629
+1244162
+2 2 5 1244153
+6635949
+3 2 17 6635927
+8379923
+3 2 7 8379911
+417358
+2 2 17 417337
+158328
+2 2 31 158293
+9269916
+2 2 19 9269893
+8406840
+2 2 7 8406829
+7537225
+3 2 13 7537207
+9820622
+2 2 131 9820487
+6714361
+3 2 7 6714349
+1
+Impossible.
+8
+2 2 2 2
+10000000
+2 2 5 9999991
+==1142== 
+==1142== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 19 from 1)
+==1142== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
+==1142== malloc/free: 6 allocs, 0 frees, 122,880 bytes allocated.
+==1142== For counts of detected errors, rerun with: -v
+==1142== searching for pointers to 6 not-freed blocks.
+==1142== checked 286,328 bytes.
+==1142== 
+==1142== LEAK SUMMARY:
+==1142==    definitely lost: 0 bytes in 0 blocks.
+==1142==      possibly lost: 0 bytes in 0 blocks.
+==1142==    still reachable: 122,880 bytes in 6 blocks.
+==1142==         suppressed: 0 bytes in 0 blocks.
+==1142== Rerun with --leak-check=full to see details of leaked memory.
