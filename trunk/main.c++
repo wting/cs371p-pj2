@@ -9,7 +9,7 @@ using namespace std;
 #ifdef TEST
     #include "cppunit/TestSuite.h"      // TestSuite
     #include "cppunit/TextTestRunner.h" // TestRunner
-    #include "TestCollatz.h"
+    #include "TestPrimes.h"
 #endif
 
 #ifdef ONLINE_JUDGE
@@ -161,15 +161,15 @@ void build_primes() {
 
 int main () {
     ios_base::sync_with_stdio(false); /// turn off synchronization with C I/O
+	build_primes();
 
     #ifdef TEST
         /// unit tests
         CppUnit::TextTestRunner tr;
-        tr.addTest(TestCollatz::suite());
+        tr.addTest(TestPrimes::suite());
         tr.run();
     #else
         /// program execution
-		build_primes();
 		while (read(cin)) {
 			eval();
 			print(cout);
