@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+'''
+Outputs 300k random numbers between 1 and 10M
+'''
+
 import random
 
 random.seed()
