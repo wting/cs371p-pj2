@@ -17,6 +17,8 @@
 // To run the program:
 //	 g++ -ansi -pedantic -Wall main.c++ -o main.app
 //	 valgrind main.app < Primes.in > Primes.out
+// g++ -o main.app -pg -O2 -DONLINE_JUDGE -DPROFILE main.c++ && ./main.app < in_superlist > gprof.out && gprof ./main.app > gprof.out && less gprof.out
+
 
 // To configure Doxygen:
 //	 doxygen -g
@@ -556,16 +558,12 @@ unsigned int plist[NUMPRIMES] =
  * @return True if prime, false otherwise.
  */
 bool isPrimeBoolCache(const int &n) { return p[n]; }
+bool isPrimeNaiveCond(const int &i, const int &n) { return (n%plist[i] == 0); }
 bool isPrimeNaive(const int &n) {
 	unsigned int limit = floor(sqrt(n));
-
-	for(int count = 0; plist[count] < limit; count++) {
-
-		// We found a winner!
-		if(n % plist[count] == 0) {
+	for(int count = 0; plist[count] < limit; count++)
+		if(isPrimeNaiveCond(count,n))
 			return false;
-		}
-	}
 	return true;
 }
 

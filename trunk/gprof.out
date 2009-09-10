@@ -3,13 +3,12 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  us/call  us/call  name    
- 97.96     16.81    16.81 16915211     0.99     0.99  isPrimeNaive(int const&)
-  0.93     16.97     0.16  1999999     0.08     8.52  eval()
-  0.47     17.05     0.08  1999999     0.04     0.04  print(std::ostream&)
-  0.41     17.12     0.07 16917975     0.00     1.00  isPrime(unsigned int)
-  0.17     17.15     0.03  2000000     0.01     0.01  read(std::istream&)
-  0.06     17.16     0.01                             main
-  0.00     17.16     0.00        1     0.00     0.00  global constructors keyed to i
+ 97.91     24.39    24.39 25377269     0.96     0.96  isPrimeNaive(int const&)
+  0.92     24.62     0.23  2999999     0.08     8.25  eval()
+  0.56     24.76     0.14 25381347     0.01     0.97  isPrime(unsigned int)
+  0.36     24.85     0.09  2999999     0.03     0.03  print(std::ostream&)
+  0.24     24.91     0.06  3000000     0.02     0.02  read(std::istream&)
+  0.00     24.91     0.00        1     0.00     0.00  global constructors keyed to i
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -41,33 +40,33 @@ name       the name of the function.  This is the minor sort
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 4 byte(s) for 0.06% of 17.16 seconds
+granularity: each sample hit covers 4 byte(s) for 0.04% of 24.91 seconds
 
 index % time    self  children    called     name
                                                  <spontaneous>
-[1]    100.0    0.01   17.15                 main [1]
-                0.16   16.88 1999999/1999999     eval() [2]
-                0.08    0.00 1999999/1999999     print(std::ostream&) [5]
-                0.03    0.00 2000000/2000000     read(std::istream&) [6]
+[1]    100.0    0.00   24.91                 main [1]
+                0.23   24.53 2999999/2999999     eval() [2]
+                0.09    0.00 2999999/2999999     print(std::ostream&) [5]
+                0.06    0.00 3000000/3000000     read(std::istream&) [6]
 -----------------------------------------------
-                0.16   16.88 1999999/1999999     main [1]
-[2]     99.3    0.16   16.88 1999999         eval() [2]
-                0.07   16.81 16917975/16917975     isPrime(unsigned int) [3]
+                0.23   24.53 2999999/2999999     main [1]
+[2]     99.4    0.23   24.53 2999999         eval() [2]
+                0.14   24.39 25381347/25381347     isPrime(unsigned int) [3]
 -----------------------------------------------
-                0.07   16.81 16917975/16917975     eval() [2]
-[3]     98.4    0.07   16.81 16917975         isPrime(unsigned int) [3]
-               16.81    0.00 16915211/16915211     isPrimeNaive(int const&) [4]
+                0.14   24.39 25381347/25381347     eval() [2]
+[3]     98.5    0.14   24.39 25381347         isPrime(unsigned int) [3]
+               24.39    0.00 25377269/25377269     isPrimeNaive(int const&) [4]
 -----------------------------------------------
-               16.81    0.00 16915211/16915211     isPrime(unsigned int) [3]
-[4]     98.0   16.81    0.00 16915211         isPrimeNaive(int const&) [4]
+               24.39    0.00 25377269/25377269     isPrime(unsigned int) [3]
+[4]     97.9   24.39    0.00 25377269         isPrimeNaive(int const&) [4]
 -----------------------------------------------
-                0.08    0.00 1999999/1999999     main [1]
-[5]      0.5    0.08    0.00 1999999         print(std::ostream&) [5]
+                0.09    0.00 2999999/2999999     main [1]
+[5]      0.4    0.09    0.00 2999999         print(std::ostream&) [5]
 -----------------------------------------------
-                0.03    0.00 2000000/2000000     main [1]
-[6]      0.2    0.03    0.00 2000000         read(std::istream&) [6]
+                0.06    0.00 3000000/3000000     main [1]
+[6]      0.2    0.06    0.00 3000000         read(std::istream&) [6]
 -----------------------------------------------
-                0.00    0.00       1/1           __do_global_ctors_aux [14]
+                0.00    0.00       1/1           __do_global_ctors_aux [15]
 [12]     0.0    0.00    0.00       1         global constructors keyed to i [12]
 -----------------------------------------------
 
@@ -156,6 +155,5 @@ index % time    self  children    called     name
 
 Index by function name
 
-  [12] global constructors keyed to i [6] read(std::istream&) [1] main
-   [4] isPrimeNaive(int const&) [5] print(std::ostream&)
-   [2] eval()                  [3] isPrime(unsigned int)
+  [12] global constructors keyed to i [2] eval()           [5] print(std::ostream&)
+   [4] isPrimeNaive(int const&) [6] read(std::istream&)    [3] isPrime(unsigned int)
