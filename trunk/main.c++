@@ -555,26 +555,46 @@ unsigned int plist[NUMPRIMES] =
  *
  * @return True if prime, false otherwise.
  */
-bool isPrime (unsigned int n) {
+bool isPrimeBoolCache(const int &n) { return p[n]; }
+bool isPrimeNaive(const int &n) {
+	unsigned int limit = floor(sqrt(n));
 
-	// If we've already got the primality of n:
-	if(n < ROOTTOP) {
+	for(int count = 0; plist[count] < limit; count++) {
 
-		return p[n];
-
-	// Else, check from primes between 1 to sqrt(n).
-	} else {
-
-		unsigned int limit = floor(sqrt(n));
-
-		for(int count = 0; plist[count] < limit; count++) {
-
-			// We found a winner!
-			if(n % plist[count] == 0) {
-				return false;
-			}
+		// We found a winner!
+		if(n % plist[count] == 0) {
+			return false;
 		}
 	}
+	return true;
+}
+
+bool isPrime (unsigned int n) {
+	#ifdef PROFILE
+		if (n< ROOTTOP)
+			return isPrimeBoolCache(n);
+		else
+			return isPrimeNaive(n);
+	#else
+
+		// If we've already got the primality of n:
+		if(n < ROOTTOP) {
+				return p[n];
+
+		// Else, check from primes between 1 to sqrt(n).
+		} else {
+
+				unsigned int limit = floor(sqrt(n));
+
+				for(int count = 0; plist[count] < limit; count++) {
+
+					// We found a winner!
+					if(n % plist[count] == 0) {
+						return false;
+					}
+				}
+		}
+	#endif
 
 	// We did not find a factor from the primes between 1 to sqrt(n).
 	return true;
