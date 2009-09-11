@@ -1,0 +1,25 @@
+#summary A short documentation of our implementation of a solution for the [http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=13&page=show_problem&problem=1109 Primes problem].
+
+= Introduction =
+
+A restatement of the problem is given here, copied directly from the problem description page.
+
+_The input contains one integer number N (N<=10000000) in every line. This is the number you will have to express as a summation of four primes. Input is terminated by end of file._
+
+Our solution implements the basic format that was discussed in class, which is as follows.
+
+= Solution Description =
+
+  # First, we observe the following properties of addition:
+
+    # Even + Even = Even
+    # Even + Odd = Odd
+    # Odd + Odd = Even
+
+    We know that every prime is odd, with the exception of 2. So, in order to have two primes sum up to any number, the number must be an even number, which is to say that its summands must both be even or odd, and for our purposes, we choose odd.
+
+  # To do this, we first consider the smallest primes, 2 and 3. If a number is even, if we subtract even numbers from it, we get an even. For an odd, we must subtract from it an odd number.
+
+    This gives us the general rule: for an even number, set the first two summands of the final summation to 2, and if odd, set the first summand to 2 and the second summand to 3.
+
+    This gives us a
