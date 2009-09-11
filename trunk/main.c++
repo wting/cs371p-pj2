@@ -9,7 +9,6 @@ using namespace std;
 #ifdef TEST
     #include "cppunit/TestSuite.h"      // TestSuite
     #include "cppunit/TextTestRunner.h" // TestRunner
-    #include "TestPrimes.h"
 #endif
 
 #ifdef ONLINE_JUDGE
@@ -158,6 +157,10 @@ void build_primes() {
 			++i;
 	}
 }
+
+#ifdef TEST
+    #include "TestPrimes.h"
+#endif
 
 int main () {
     ios_base::sync_with_stdio(false); /// turn off synchronization with C I/O
