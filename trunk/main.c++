@@ -1,4 +1,6 @@
-// Name: Benry Yip, HanPing Ting
+/**
+@mainpage CS371P Primes - HanPing Ting, Benry Yip
+*/
 
 #include <cassert>
 #include <iostream>
@@ -9,10 +11,6 @@ using namespace std;
 #ifdef TEST
     #include "cppunit/TestSuite.h"      // TestSuite
     #include "cppunit/TextTestRunner.h" // TestRunner
-#endif
-
-#ifdef ONLINE_JUDGE
-    #define NDEBUG
 #endif
 
 /// cache size
@@ -31,20 +29,16 @@ unsigned int primes_bit[] = {0xA08A28AC,0x28208A20,0x2088288,0x800228A2,0x20A00A
 /// first 3612 primes
 unsigned int primes[P_SIZE];
 
-/// profiler helper
-int isprime_cache(const int &n) { return primes_bit[n >> 5] & (1 << (n & 0x1F)); }
-
-/// profiler helper
+#ifdef PROFILE
+/// profiling functions
 bool isprime_edge_cases(const int &n) {
 	if (!(n & 0x1) || (n%3 == 0))
 		return false;
 	return true;
 }
 
-/// profiler helper
 bool isprime_naive_cond(const int &i, const int &n) { return (n % primes[i] == 0); }
 
-/// profiler helper
 bool isprime_naive(const int &n) {
 	unsigned int lim = sqrt(n);
 	for (int i = 0; primes[i] < lim; ++i)
@@ -52,9 +46,17 @@ bool isprime_naive(const int &n) {
 			return false;
 	return true;
 }
+#endif
+
+/// cache lookup
+int isprime_cache(const int &n) { return primes_bit[n >> 5] & (1 << (n & 0x1F)); }
 
 /// tests primality
 bool isprime(const int &n) {
+	/**
+	@param [n] number to test primality
+	@return true if prime
+	*/
 	#ifndef ONLINE_JUDGE
 		assert(primes[0] = 2);
 	#endif
@@ -67,15 +69,14 @@ bool isprime(const int &n) {
 
 		return isprime_naive(n);
 	#else
-		/// retrieve primality from cache
 		if (n < (PB_LIMIT))
-			return primes_bit[n >> 5] & (1 << (n & 0x1F));
+			return isprime_cache(n);
 
-		/// testing if divisible by 2 or 3
+		// divisible by 2 or 3 test
 		if (!(n & 0x1) || (n%3 == 0))
 			return false;
 
-		/// naive test
+		// naive test
 		unsigned int lim = sqrt(n);
 		for (int i = 0; primes[i] < lim; ++i)
 			if (n % primes[i] == 0)
@@ -85,8 +86,11 @@ bool isprime(const int &n) {
 	return true;
 }
 
-///find two primes that add up to n
+/// find two primes that add up to n
 void find_sum(const int &n) {
+	/**
+	@param [n] even number
+	*/
 	#ifndef ONLINE_JUDGE
 		assert((n%2) == 0);
 	#endif
@@ -108,16 +112,13 @@ void find_sum(const int &n) {
 	}
 }
 
+/// initialize variables
 void eval() {
 	#ifndef ONLINE_JUDGE
 		cout << in << endl;
 	#endif
 
-	// initialize results
-	sum[0] = 2;
-	sum[1] = 2;
-	sum[2] = 2;
-	sum[3] = 2;
+	sum[0] = sum[1] = sum[2] = sum[3] = 2;
 
 	if (in < 8)
 		in = -1;
@@ -131,14 +132,23 @@ void eval() {
 	}
 }
 
+/// display results
 void print(std::ostream &out) {
+	/**
+	@param out stream to direct output
+	*/
 	if (in == -1)
 		out << "Impossible." << endl;
 	else
 		out << sum[0] << " " << sum[1] << " " << sum[2] << " " << sum[3] << endl;
 }
 
-bool read (std::istream& input) {
+/// reads a number into [in]
+bool read (std::istream &input) {
+	/**
+	@param [input] stream to read input from
+	@return true if input succeeds
+	*/
 	if (!(input >> in))
 		return false;
 	return true;
@@ -163,16 +173,16 @@ void build_primes() {
 #endif
 
 int main () {
-    ios_base::sync_with_stdio(false); /// turn off synchronization with C I/O
+    ios_base::sync_with_stdio(false); // turn off synchronization with C I/O
 	build_primes();
 
     #ifdef TEST
-        /// unit tests
+        // unit tests
         CppUnit::TextTestRunner tr;
         tr.addTest(TestPrimes::suite());
         tr.run();
     #else
-        /// program execution
+        // program execution
 		while (read(cin)) {
 			eval();
 			print(cout);
