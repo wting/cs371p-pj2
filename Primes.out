@@ -1,11 +1,11 @@
-==1142== Memcheck, a memory error detector.
-==1142== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
-==1142== Using LibVEX rev 1884, a library for dynamic binary translation.
-==1142== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
-==1142== Using valgrind-3.4.1-Debian, a dynamic binary instrumentation framework.
-==1142== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
-==1142== For more details, rerun with: -v
-==1142== 
+==10301== Memcheck, a memory error detector.
+==10301== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
+==10301== Using LibVEX rev 1884, a library for dynamic binary translation.
+==10301== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
+==10301== Using valgrind-3.4.1-Debian, a dynamic binary instrumentation framework.
+==10301== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
+==10301== For more details, rerun with: -v
+==10301== 
 1730433
 3 2 71 1730357
 7831732
@@ -110,17 +110,17 @@ Impossible.
 2 2 2 2
 10000000
 2 2 5 9999991
-==1142== 
-==1142== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 19 from 1)
-==1142== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
-==1142== malloc/free: 6 allocs, 0 frees, 122,880 bytes allocated.
-==1142== For counts of detected errors, rerun with: -v
-==1142== searching for pointers to 6 not-freed blocks.
-==1142== checked 286,328 bytes.
-==1142== 
-==1142== LEAK SUMMARY:
-==1142==    definitely lost: 0 bytes in 0 blocks.
-==1142==      possibly lost: 0 bytes in 0 blocks.
-==1142==    still reachable: 122,880 bytes in 6 blocks.
-==1142==         suppressed: 0 bytes in 0 blocks.
-==1142== Rerun with --leak-check=full to see details of leaked memory.
+==10301== 
+==10301== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 17 from 1)
+==10301== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
+==10301== malloc/free: 6 allocs, 0 frees, 122,880 bytes allocated.
+==10301== For counts of detected errors, rerun with: -v
+==10301== searching for pointers to 6 not-freed blocks.
+==10301== checked 122,520 bytes.
+==10301== 
+==10301== LEAK SUMMARY:
+==10301==    definitely lost: 0 bytes in 0 blocks.
+==10301==      possibly lost: 0 bytes in 0 blocks.
+==10301==    still reachable: 122,880 bytes in 6 blocks.
+==10301==         suppressed: 0 bytes in 0 blocks.
+==10301== Rerun with --leak-check=full to see details of leaked memory.

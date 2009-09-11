@@ -3,16 +3,16 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  us/call  us/call  name    
- 97.63     23.47    23.47 14308586     1.64     1.64  isprime_naive(int const&)
-  0.71     23.64     0.17 25382561     0.01     0.01  isprime(int const&)
-  0.50     23.76     0.12 25145678     0.00     0.00  isprime_edge_cases(int const&)
-  0.37     23.85     0.09  2999999     0.03     0.03  print(std::ostream&)
-  0.25     23.91     0.06  2999998     0.02     7.94  find_sum(int const&)
-  0.21     23.96     0.05  2999999     0.02     7.96  eval()
-  0.17     24.00     0.04  3000000     0.01     0.01  read(std::istream&)
-  0.17     24.04     0.04                             main
-  0.00     24.04     0.00        1     0.00     0.00  global constructors keyed to in
-  0.00     24.04     0.00        1     0.00     0.00  build_primes()
+ 97.77     37.20    37.20 23850066     1.56     1.56  isprime_naive(int const&)
+  0.63     37.44     0.24 41910207     0.01     0.01  isprime_edge_cases(int const&)
+  0.60     37.67     0.23 42298318     0.01     0.01  isprime(int const&)
+  0.45     37.84     0.17  4999999     0.03     0.03  print(std::ostream&)
+  0.26     37.94     0.10  4999997     0.02     7.55  find_sum(int const&)
+  0.18     38.01     0.07                             main
+  0.05     38.03     0.02  5000000     0.00     0.00  read(std::istream&)
+  0.05     38.05     0.02  4999999     0.00     7.56  eval()
+  0.00     38.05     0.00        1     0.00     0.00  global constructors keyed to in
+  0.00     38.05     0.00        1     0.00     0.00  build_primes()
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -44,40 +44,40 @@ name       the name of the function.  This is the minor sort
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 4 byte(s) for 0.04% of 24.04 seconds
+granularity: each sample hit covers 4 byte(s) for 0.03% of 38.05 seconds
 
 index % time    self  children    called     name
                                                  <spontaneous>
-[1]    100.0    0.04   24.00                 main [1]
-                0.05   23.82 2999999/2999999     eval() [2]
-                0.09    0.00 2999999/2999999     print(std::ostream&) [7]
-                0.04    0.00 3000000/3000000     read(std::istream&) [8]
+[1]    100.0    0.07   37.98                 main [1]
+                0.02   37.77 4999999/4999999     eval() [2]
+                0.17    0.00 4999999/4999999     print(std::ostream&) [7]
+                0.02    0.00 5000000/5000000     read(std::istream&) [8]
                 0.00    0.00       1/1           build_primes() [15]
 -----------------------------------------------
-                0.05   23.82 2999999/2999999     main [1]
-[2]     99.3    0.05   23.82 2999999         eval() [2]
-                0.06   23.76 2999998/2999998     find_sum(int const&) [3]
+                0.02   37.77 4999999/4999999     main [1]
+[2]     99.3    0.02   37.77 4999999         eval() [2]
+                0.10   37.67 4999997/4999997     find_sum(int const&) [3]
 -----------------------------------------------
-                0.06   23.76 2999998/2999998     eval() [2]
-[3]     99.1    0.06   23.76 2999998         find_sum(int const&) [3]
-               23.47    0.00 14308586/14308586     isprime_naive(int const&) [4]
-                0.17    0.12 25382561/25382561     isprime(int const&) [5]
+                0.10   37.67 4999997/4999997     eval() [2]
+[3]     99.3    0.10   37.67 4999997         find_sum(int const&) [3]
+               37.20    0.00 23850066/23850066     isprime_naive(int const&) [4]
+                0.23    0.24 42298318/42298318     isprime(int const&) [5]
 -----------------------------------------------
-               23.47    0.00 14308586/14308586     find_sum(int const&) [3]
-[4]     97.6   23.47    0.00 14308586         isprime_naive(int const&) [4]
+               37.20    0.00 23850066/23850066     find_sum(int const&) [3]
+[4]     97.8   37.20    0.00 23850066         isprime_naive(int const&) [4]
 -----------------------------------------------
-                0.17    0.12 25382561/25382561     find_sum(int const&) [3]
-[5]      1.2    0.17    0.12 25382561         isprime(int const&) [5]
-                0.12    0.00 25145678/25145678     isprime_edge_cases(int const&) [6]
+                0.23    0.24 42298318/42298318     find_sum(int const&) [3]
+[5]      1.2    0.23    0.24 42298318         isprime(int const&) [5]
+                0.24    0.00 41910207/41910207     isprime_edge_cases(int const&) [6]
 -----------------------------------------------
-                0.12    0.00 25145678/25145678     isprime(int const&) [5]
-[6]      0.5    0.12    0.00 25145678         isprime_edge_cases(int const&) [6]
+                0.24    0.00 41910207/41910207     isprime(int const&) [5]
+[6]      0.6    0.24    0.00 41910207         isprime_edge_cases(int const&) [6]
 -----------------------------------------------
-                0.09    0.00 2999999/2999999     main [1]
-[7]      0.4    0.09    0.00 2999999         print(std::ostream&) [7]
+                0.17    0.00 4999999/4999999     main [1]
+[7]      0.4    0.17    0.00 4999999         print(std::ostream&) [7]
 -----------------------------------------------
-                0.04    0.00 3000000/3000000     main [1]
-[8]      0.2    0.04    0.00 3000000         read(std::istream&) [8]
+                0.02    0.00 5000000/5000000     main [1]
+[8]      0.1    0.02    0.00 5000000         read(std::istream&) [8]
 -----------------------------------------------
                 0.00    0.00       1/1           __do_global_ctors_aux [18]
 [14]     0.0    0.00    0.00       1         global constructors keyed to in [14]

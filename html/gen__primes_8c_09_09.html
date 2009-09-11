@@ -9,7 +9,7 @@
   <div class="tabs">
     <ul>
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
@@ -128,6 +128,15 @@ pr array size
 create a primality truth table for min &lt;= n &lt; max as an unsigned 32b int 
 <p>
 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>[min]</em>&nbsp;</td><td>lower bound of range </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>[max]</em>&nbsp;</td><td>upper bound of range </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>32b primality bool string as an unsigned int</dd></dl>
+
 </div>
 </div><p>
 <a class="anchor" name="a923d52b5562a4ad848bd683aab7d214"></a><!-- doxytag: member="gen_primes.c++::gen_primes" ref="a923d52b5562a4ad848bd683aab7d214" args="(int size)" -->
@@ -149,6 +158,13 @@ create a primality truth table for min &lt;= n &lt; max as an unsigned 32b int
 <p>
 generate primality cache 
 <p>
+
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>[size]</em>&nbsp;</td><td>size of array</td></tr>
+  </table>
+</dl>
 
 </div>
 </div><p>
@@ -172,6 +188,14 @@ generate primality cache
 isprime using cache 
 <p>
 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>[n]</em>&nbsp;</td><td>number to test primality </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>true if prime</dd></dl>
+
 </div>
 </div><p>
 <a class="anchor" name="514f7856cc17e3583cf9b760b22255e0"></a><!-- doxytag: member="gen_primes.c++::isprime_naive" ref="514f7856cc17e3583cf9b760b22255e0" args="(const int &amp;n)" -->
@@ -193,6 +217,14 @@ isprime using cache
 <p>
 naive implementation of isprime 
 <p>
+
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>[n]</em>&nbsp;</td><td>number to test primality </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>true if prime</dd></dl>
 
 </div>
 </div><p>
@@ -256,6 +288,13 @@ print primality cache
 print number as binary 
 <p>
 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>[num]</em>&nbsp;</td><td>number to print</td></tr>
+  </table>
+</dl>
+
 </div>
 </div><p>
 <a class="anchor" name="60d003e2f847df8b735de426c672ff41"></a><!-- doxytag: member="gen_primes.c++::print_hex" ref="60d003e2f847df8b735de426c672ff41" args="(unsigned int num)" -->
@@ -278,6 +317,13 @@ print number as binary
 print number as binary 
 <p>
 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>[num]</em>&nbsp;</td><td>number to print</td></tr>
+  </table>
+</dl>
+
 </div>
 </div><p>
 <hr><h2>Variable Documentation</h2>
@@ -299,7 +345,7 @@ primes cache as bit array
 </div>
 </div><p>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu Sep 10 14:56:30 2009 by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Sep 11 17:46:21 2009 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

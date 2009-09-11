@@ -9,7 +9,7 @@
   <div class="tabs">
     <ul>
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
@@ -39,16 +39,7 @@
 <tr><td colspan="2"><br><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c_09_09.html#99acf7066726518042380d35f8f13193">isprime_cache</a> (const int &amp;n)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">profiler helper  <a href="#99acf7066726518042380d35f8f13193"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c_09_09.html#cb29b1b21ca8c63671c390382ea6396d">isprime_edge_cases</a> (const int &amp;n)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">profiler helper  <a href="#cb29b1b21ca8c63671c390382ea6396d"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c_09_09.html#757523e09ffc9521c2e4743debd92e57">isprime_naive_cond</a> (const int &amp;i, const int &amp;n)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">profiler helper  <a href="#757523e09ffc9521c2e4743debd92e57"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c_09_09.html#514f7856cc17e3583cf9b760b22255e0">isprime_naive</a> (const int &amp;n)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">profiler helper  <a href="#514f7856cc17e3583cf9b760b22255e0"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">cache lookup  <a href="#99acf7066726518042380d35f8f13193"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c_09_09.html#7e42213fa2c53d4645f5bb2430e0fdae">isprime</a> (const int &amp;n)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">tests primality  <a href="#7e42213fa2c53d4645f5bb2430e0fdae"></a><br></td></tr>
@@ -57,10 +48,13 @@
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">find two primes that add up to n  <a href="#18f539458671421494881e2710227c92"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c_09_09.html#c69cb0a525d7af9ddbcdbd28fa6f3dc4">eval</a> ()</td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">initialize variables  <a href="#c69cb0a525d7af9ddbcdbd28fa6f3dc4"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c_09_09.html#4092f5ea1d0d19738e9616f9b8b05328">print</a> (std::ostream &amp;out)</td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">display results  <a href="#4092f5ea1d0d19738e9616f9b8b05328"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c_09_09.html#db5b57469558317c2eaa5d778d4b0968">read</a> (std::istream &amp;input)</td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">reads a number into [in]  <a href="#db5b57469558317c2eaa5d778d4b0968"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c_09_09.html#58ad12d1d22eb0e212f234c18e791aa2">build_primes</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">creates array of first 3612 primes from cache  <a href="#58ad12d1d22eb0e212f234c18e791aa2"></a><br></td></tr>
@@ -170,6 +164,8 @@ creates array of first 3612 primes from cache
 <div class="memdoc">
 
 <p>
+initialize variables 
+<p>
 
 </div>
 </div><p>
@@ -192,6 +188,13 @@ creates array of first 3612 primes from cache
 <p>
 find two primes that add up to n 
 <p>
+
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>[n]</em>&nbsp;</td><td>even number</td></tr>
+  </table>
+</dl>
 
 </div>
 </div><p>
@@ -216,9 +219,13 @@ tests primality
 <p>
 
 <p>
-retrieve primality from cache<p>
-testing if divisible by 2 or 3<p>
-naive test 
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>[n]</em>&nbsp;</td><td>number to test primality </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>true if prime</dd></dl>
+
 </div>
 </div><p>
 <a class="anchor" name="99acf7066726518042380d35f8f13193"></a><!-- doxytag: member="main.c++::isprime_cache" ref="99acf7066726518042380d35f8f13193" args="(const int &amp;n)" -->
@@ -238,82 +245,7 @@ naive test
 <div class="memdoc">
 
 <p>
-profiler helper 
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="cb29b1b21ca8c63671c390382ea6396d"></a><!-- doxytag: member="main.c++::isprime_edge_cases" ref="cb29b1b21ca8c63671c390382ea6396d" args="(const int &amp;n)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool isprime_edge_cases           </td>
-          <td>(</td>
-          <td class="paramtype">const int &amp;&nbsp;</td>
-          <td class="paramname"> <em>n</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-profiler helper 
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="514f7856cc17e3583cf9b760b22255e0"></a><!-- doxytag: member="main.c++::isprime_naive" ref="514f7856cc17e3583cf9b760b22255e0" args="(const int &amp;n)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool isprime_naive           </td>
-          <td>(</td>
-          <td class="paramtype">const int &amp;&nbsp;</td>
-          <td class="paramname"> <em>n</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-profiler helper 
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="757523e09ffc9521c2e4743debd92e57"></a><!-- doxytag: member="main.c++::isprime_naive_cond" ref="757523e09ffc9521c2e4743debd92e57" args="(const int &amp;i, const int &amp;n)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool isprime_naive_cond           </td>
-          <td>(</td>
-          <td class="paramtype">const int &amp;&nbsp;</td>
-          <td class="paramname"> <em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&nbsp;</td>
-          <td class="paramname"> <em>n</em></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-profiler helper 
+cache lookup 
 <p>
 
 </div>
@@ -335,9 +267,6 @@ profiler helper
 
 <p>
 
-<p>
-turn off synchronization with C I/O<p>
-program execution 
 </div>
 </div><p>
 <a class="anchor" name="4092f5ea1d0d19738e9616f9b8b05328"></a><!-- doxytag: member="main.c++::print" ref="4092f5ea1d0d19738e9616f9b8b05328" args="(std::ostream &amp;out)" -->
@@ -357,6 +286,15 @@ program execution
 <div class="memdoc">
 
 <p>
+display results 
+<p>
+
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>out</em>&nbsp;</td><td>stream to direct output</td></tr>
+  </table>
+</dl>
 
 </div>
 </div><p>
@@ -377,6 +315,16 @@ program execution
 <div class="memdoc">
 
 <p>
+reads a number into [in] 
+<p>
+
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>[input]</em>&nbsp;</td><td>stream to read input from </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>true if input succeeds</dd></dl>
 
 </div>
 </div><p>
@@ -450,7 +398,7 @@ results array
 </div>
 </div><p>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu Sep 10 14:56:30 2009 by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Sep 11 17:46:21 2009 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
